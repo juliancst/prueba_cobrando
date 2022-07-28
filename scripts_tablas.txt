@@ -1,0 +1,16 @@
+CREATE TABLE "empleado" (
+  "codigo" INT(10) NOT NULL PRIMARY KEY,
+  "nif" VARCHAR(9) NOT NULL,
+  "nombre" VARCHAR(100) NOT NULL,
+  "apellido1" VARCHAR(100) NOT NULL,
+  "apellido2" VARCHAR(100) NULL,
+  "codigo_departamento" INT NOT NULL,
+  FOREIGN KEY ("codigo_departamento")
+  REFERENCES "departamento" ("codigo")
+)
+
+CREATE TABLE "departamento" (
+  "codigo" INT(10) NOT NULL PRIMARY KEY,
+  "nombre" VARCHAR(100) NOT NULL,
+  "presupuesto" DOUBLE NOT NULL
+)
